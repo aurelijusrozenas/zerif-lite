@@ -448,25 +448,25 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 						<div class="col-lg-4 col-sm-4" data-scrollreveal="enter left after 0s over 1s">
 
-							<input required="required" type="text" name="myname" placeholder="Your Name" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
+							<input required="required" type="text" name="myname" placeholder="Vardas" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
 
 						</div>
 
 						<div class="col-lg-4 col-sm-4" data-scrollreveal="enter left after 0s over 1s">
 
-							<input required="required" type="email" name="myemail" placeholder="Your Email" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
+							<input required="required" type="email" name="myemail" placeholder="El. pašto adresas" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
 
 						</div>
 
 						<div class="col-lg-4 col-sm-4" data-scrollreveal="enter left after 0s over 1s">
 
-							<input required="required" type="text" name="mysubject" placeholder="Subject" class="form-control input-box" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
+							<input required="required" type="text" name="mysubject" placeholder="Tema" class="form-control input-box" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
 
 						</div>
 
 						<div class="col-lg-12 col-sm-12" data-scrollreveal="enter right after 0s over 1s">
 
-							<textarea name="mymessage" class="form-control textarea-box" placeholder="Your Message"><?php if(isset($_POST['mymessage'])) { echo stripslashes($_POST['mymessage']); } ?></textarea>
+							<textarea name="mymessage" class="form-control textarea-box" placeholder="Užklausa"><?php if(isset($_POST['mymessage'])) { echo stripslashes($_POST['mymessage']); } ?></textarea>
 
 						</div>
 	
