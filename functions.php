@@ -1316,7 +1316,7 @@ class zerif_team_widget extends WP_Widget
 
 					<?php if( !empty($instance['position']) ): ?>
 					
-						<div class="position"><?php echo apply_filters('widget_title', $instance['position']); ?></div>
+						<div class="position"><?php echo $instance['position']; ?></div>
 				
 					<?php endif; ?>
 
@@ -1365,7 +1365,7 @@ class zerif_team_widget extends WP_Widget
                 <div class="details">
 
 
-                    <?php echo htmlspecialchars_decode(apply_filters('widget_title', $instance['description'])); ?>
+                    <?php echo $instance['description']; ?>
 
 
                 </div>
