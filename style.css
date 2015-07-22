@@ -1385,7 +1385,7 @@ object {
 	box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
 }
 .header-content-wrap {
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.15);
 	position: relative;
 	-webkit-box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
 	box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
@@ -2141,7 +2141,7 @@ width: -webkit-calc(100% / 4);
  **   Section: stats                 -----
 -----------------------------------------*/
 .stats {
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.15);
 	padding: 100px 0 60px 0 !important;
 	clear: both;
 }
@@ -2311,7 +2311,7 @@ width: -webkit-calc(100% / 4);
 -----------------------------------------*/
 .packages {
 	padding-bottom: 50px;
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.15);
 }
 .package {
 	border-radius: 4px;
@@ -2574,7 +2574,7 @@ width: -webkit-calc(100% / 4);
 .newsletter {
 	padding-top: 62px;
 	padding-bottom: 62px;
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.15);
 }
 .newsletter h3 {
 	font-size: 28px;
@@ -2689,7 +2689,7 @@ width: -webkit-calc(100% / 4);
  **   Contact us             -----
 -----------------------------------------*/
 .contact-us {
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.15);
 	padding-bottom: 95px;
 }
 .contact-us .section-header h6 {
