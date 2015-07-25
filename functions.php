@@ -503,166 +503,6 @@ function zerif_register_required_plugins()
 
 require get_template_directory() . '/inc/jetpack.php';
 
-
-/* metaboxes */
-
-add_action('admin_menu', 'zerif_post_options_box');
-
-
-function zerif_post_options_box()
-{
-
-    add_meta_box('post_info', __('Post details','zerif-lite'), 'zerif_custom_post_info', 'post', 'side', 'high');
-
-}
-
-
-function zerif_custom_post_info()
-{
-
-    global $post;
-
-    ?>
-
-    <fieldset id="mycustom-div">
-
-        <div>
-
-            <p>
-
-                <label for="zerif_testimonial_option"><?php _e('Testimonial author details:', 'zerif-lite'); ?></label><br/>
-
-                <input type="text" name="zerif_testimonial_option" id="zerif_testimonial_option"
-                       value="<?php echo get_post_meta($post->ID, 'zerif_testimonial_option', true); ?>">
-
-            </p>
-
-            <p>
-
-                <label for="zerif_team_member_option"><?php _e('Team member position:', 'zerif-lite'); ?></label><br/>
-
-                <input type="text" name="zerif_team_member_option" id="zerif_team_member_option"
-                       value="<?php echo get_post_meta($post->ID, 'zerif_team_member_option', true); ?>">
-
-            </p>
-
-            <p>
-
-                <label
-                    for="zerif_team_member_fb_option"><?php _e('Team member facebook link:', 'zerif-lite'); ?></label><br/>
-
-                <input type="text" name="zerif_team_member_fb_option" id="zerif_team_member_fb_option"
-                       value="<?php echo get_post_meta($post->ID, 'zerif_team_member_fb_option', true); ?>">
-
-            </p>
-
-            <p>
-
-                <label for="zerif_team_member_tw_option"><?php _e('Team member twitter link:', 'zerif-lite'); ?></label><br/>
-
-                <input type="text" name="zerif_team_member_tw_option" id="zerif_team_member_tw_option"
-                       value="<?php echo get_post_meta($post->ID, 'zerif_team_member_tw_option', true); ?>">
-
-            </p>
-
-            <p>
-
-                <label for="zerif_team_member_bh_option"><?php _e('Team member behance link:', 'zerif-lite'); ?></label><br/>
-
-                <input type="text" name="zerif_team_member_bh_option" id="zerif_team_member_bh_option"
-                       value="<?php echo get_post_meta($post->ID, 'zerif_team_member_bh_option', true); ?>">
-
-            </p>
-
-            <p>
-
-                <label
-                    for="zerif_team_member_db_option"><?php _e('Team member dribbble link:', 'zerif-lite'); ?></label><br/>
-
-                <input type="text" name="zerif_team_member_db_option" id="zerif_team_member_db_option"
-                       value="<?php echo get_post_meta($post->ID, 'zerif_team_member_db_option', true); ?>">
-
-            </p>
-
-        </div>
-
-    </fieldset>
-
-<?php
-
-}
-
-
-add_action('save_post', 'zerif_custom_add_save');
-
-function zerif_custom_add_save($postID)
-{
-
-
-    if ($parent_id = wp_is_post_revision($postID)) {
-
-        $postID = $parent_id;
-
-    }
-
-
-    if (isset($_POST['zerif_testimonial_option'])) {
-
-        zerif_update_custom_meta($postID, $_POST['zerif_testimonial_option'], 'zerif_testimonial_option');
-
-    }
-
-    if (isset($_POST['zerif_team_member_option'])) {
-
-        zerif_update_custom_meta($postID, $_POST['zerif_team_member_option'], 'zerif_team_member_option');
-
-    }
-
-    if (isset($_POST['zerif_team_member_fb_option'])) {
-
-        zerif_update_custom_meta($postID, $_POST['zerif_team_member_fb_option'], 'zerif_team_member_fb_option');
-
-    }
-
-    if (isset($_POST['zerif_team_member_tw_option'])) {
-
-        zerif_update_custom_meta($postID, $_POST['zerif_team_member_tw_option'], 'zerif_team_member_tw_option');
-
-    }
-
-    if (isset($_POST['zerif_team_member_bh_option'])) {
-
-        zerif_update_custom_meta($postID, $_POST['zerif_team_member_bh_option'], 'zerif_team_member_bh_option');
-
-    }
-
-    if (isset($_POST['zerif_team_member_db_option'])) {
-
-        zerif_update_custom_meta($postID, $_POST['zerif_team_member_db_option'], 'zerif_team_member_db_option');
-
-    }
-
-
-}
-
-
-function zerif_update_custom_meta($postID, $newvalue, $field_name)
-{
-
-
-    if (!get_post_meta($postID, $field_name)) {
-
-        add_post_meta($postID, $field_name, $newvalue);
-
-    } else {
-
-        update_post_meta($postID, $field_name, $newvalue);
-
-    }
-
-}
-
-
 function zerif_wp_page_menu()
 {
 
@@ -721,7 +561,7 @@ function zerif_register_widgets()
 /************************/
 
 
-add_action('customize_controls_print_scripts', 'zerif_ourfocus_widget_scripts');
+add_action('admin_enqueue_scripts', 'zerif_ourfocus_widget_scripts');
 
 function zerif_ourfocus_widget_scripts()
 {
@@ -808,7 +648,7 @@ class zerif_ourfocus extends WP_Widget
 
         $instance = $old_instance;
 
-        $instance['text'] = wp_filter_post_kses($new_instance['text']);
+        $instance['text'] = stripslashes(wp_filter_post_kses($new_instance['text']));
 
         $instance['title'] = strip_tags($new_instance['title']);
 		
@@ -903,7 +743,7 @@ class zerif_ourfocus extends WP_Widget
 /***************************/
 
 
-add_action('customize_controls_print_scripts', 'zerif_testimonial_widget_scripts');
+add_action('admin_enqueue_scripts', 'zerif_testimonial_widget_scripts');
 
 function zerif_testimonial_widget_scripts()
 {
@@ -1013,7 +853,7 @@ class zerif_testimonial_widget extends WP_Widget
 
         $instance = $old_instance;
 
-        $instance['text'] = $new_instance['text'];
+        $instance['text'] = stripslashes(wp_filter_post_kses($new_instance['text']));
 
         $instance['title'] = strip_tags($new_instance['title']);
 
@@ -1120,7 +960,7 @@ class zerif_testimonial_widget extends WP_Widget
 /***************************/
 
 
-add_action('customize_controls_print_scripts', 'zerif_clients_widget_scripts');
+add_action('admin_enqueue_scripts', 'zerif_clients_widget_scripts');
 
 function zerif_clients_widget_scripts()
 {
@@ -1250,7 +1090,7 @@ class zerif_clients_widget extends WP_Widget
 /***************************/
 
 
-add_action('customize_controls_print_scripts', 'zerif_team_widget_scripts');
+add_action('admin_enqueue_scripts', 'zerif_team_widget_scripts');
 
 function zerif_team_widget_scripts()
 {
@@ -1394,9 +1234,9 @@ class zerif_team_widget extends WP_Widget
 
         $instance['name'] = strip_tags($new_instance['name']);
 
-        $instance['position'] = wp_filter_post_kses($new_instance['position']);
+        $instance['position'] = stripslashes(wp_filter_post_kses($new_instance['position']));
 
-        $instance['description'] = wp_filter_post_kses($new_instance['description']);
+        $instance['description'] = stripslashes(wp_filter_post_kses($new_instance['description']));
 
         $instance['fb_link'] = strip_tags($new_instance['fb_link']);
 

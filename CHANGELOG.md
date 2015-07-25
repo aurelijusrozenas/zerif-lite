@@ -1,5 +1,80 @@
 
 
+### 1.8.2.3 - 24/07/2015
+
+ Changes: 
+
+
+ * Update style.css
+
+
+### 1.8.2.2 - 24/07/2015
+
+ Changes: 
+
+
+ * Fixed #157, upload image button in widgets
+ * Fixed #149, issue with reCaptcha
+ * Fixed #164, added bootstrap glyphicons
+ * Fixed #141, translations for contact form placeholders and added default po and mo file, plus translations for romanian
+ * Update class-tgm-plugin-activation to latest version
+ * Fixed #57, placeholders for contact form in IE9
+ * Update .pot file
+ * Fixed #166 RTL issue
+ * Fixed #162 Home latest news responsive issue AND unclosed elements issue
+ * Removed glyphicon
+
+
+### 1.8.2.2 - 01/07/2015
+
+ Changes: 
+
+
+ * Fixed #153, allow widgets in our team widget, position field
+ * Fixed #131, show first image in post if no featured image is selected for latest posts section ; fixed number of latest news section posts
+ * Fixed #69, added Create an account link for the site key and secret key in contact us section
+ * Fixed #154 Our team section hover issue
+ * Fixed #156 Right ribbon when no button
+ * Hide arraws on latest news section when number of posts is less than 4
+ * Fixed #152, quotes and apostrophes in html widgets
+ * Fixed #158 Scrolling from big buttons
+ * Reverted showing first image in post, if no featured image is selected
+ * Removed unused images
+
+
+### 1.8.2 - 29/05/2015
+
+ Changes: 
+
+
+ * Fixed XSS vulnerability with contact form
+
+
+### 1.8.1 - 29/05/2015
+
+ Changes: 
+
+
+ * Changed new line separator to \n from old mac separator \r.
+ * Updated about us section to be display in col-lg 4, 6 or 12 depending on what texts are set.
+ * Fixed closing tag.
+ * Updated contact us form style, error and success messages, made field required.
+ * Fix to contact us form to scroll on submit as described in: https://github.com/Codeinwp/zerif-lite/issues/117
+ * Fixed #138 About us section
+ * Merge pull request #142 from aurelijusrozenas/pr-contactSection
+
+Updated contact us form style, error and success messages, made field required.
+ * Merge pull request #140 from aurelijusrozenas/pr-aboutSection2
+
+Updated about us section to be display in col-lg 4, 6 or 12 depending on what texts are set.
+ * Fixed #136 smoothscroll
+ * Fixed #68, remove unused meta boxes for testimonials
+ * Fixed #63, translate ready issue
+ * Added proper license for images and font awesome
+ * Fixed #136 smoothscroll
+ * Update style.css
+
+
 ### 1.7.6 - 27/04/2015
 
  Changes: 
