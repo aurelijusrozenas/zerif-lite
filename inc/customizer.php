@@ -1003,7 +1003,7 @@ function zerif_customize_register( $wp_customize ) {
 		));
 		/* RIBBON SECTION WITH BOTTOM BUTTON */
 		/* text */
-		$wp_customize->add_setting( 'zerif_bottomribbon_text', array('sanitize_callback' => 'zerif_sanitize_text'));
+		$wp_customize->add_setting( 'zerif_bottomribbon_text', array());
 		$wp_customize->add_control( 'zerif_bottomribbon_text', array(
 				'label'    => __( 'Text', 'zerif-lite' ),
 				'section'  => 'zerif_bottomribbon_section',
