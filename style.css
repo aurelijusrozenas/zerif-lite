@@ -1507,7 +1507,7 @@ object {
 }
 .navbar-brand > img {
 	max-height: 100%;
-}		 }
+}
 .current a {
 	color: #e96656 !important;
 	position: relative;
@@ -1846,7 +1846,7 @@ object {
 	float: left;
 	overflow: hidden;
 	width: 25%; /* Fallback */
-width: -webkit-calc(100% / 4);
+	width: -webkit-calc(100% / 4);
 	width: calc(100% / 4);
 	-webkit-transition: 0.4s all linear;
 	transition: 0.4s all linear;
@@ -4811,4 +4811,20 @@ body.custom-background {
 
 .zerif-copyright-box {
 	width: 100%;
+}
+
+.cmrBlock .explanation {
+	font-size: 18px;
+}
+
+.cmrBlock .explanation a {
+	font-size: 18px;
+	color: yellow;
+	transition: all 700ms ease 0s;
+}
+.cmrBlock .explanation a:hover,
+.cmrBlock .explanation a:focus,
+.cmrBlock .explanation a:active {
+	color: #FFE100;
+	text-decoration: underline;
 }
