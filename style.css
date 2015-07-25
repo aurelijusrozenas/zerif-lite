@@ -4813,18 +4813,18 @@ body.custom-background {
 	width: 100%;
 }
 
-.cmrBlock .explanation {
+.cmrBlock .explanation, .cmrBlock .explanation a {
 	font-size: 18px;
 }
 
-.cmrBlock .explanation a {
-	font-size: 18px;
-	color: yellow;
-	transition: all 700ms ease 0s;
-}
-.cmrBlock .explanation a:hover,
-.cmrBlock .explanation a:focus,
-.cmrBlock .explanation a:active {
+.contact-us a:hover, .cmrBlock .explanation a:hover,
+.contact-us a:focus, .cmrBlock .explanation a:focus,
+.contact-us a:active, .cmrBlock .explanation a:active {
 	color: #FFE100;
 	text-decoration: underline;
+}
+
+.contact-us a, .cmrBlock .explanation a {
+	color: yellow;
+	transition: all 700ms ease 0s;
 }
