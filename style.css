@@ -1582,6 +1582,7 @@ li.current>a:before {
 	bottom: 0px;
 	left: 12.5%;
 }
+/*
 ul.nav > li.current_page_item > a:before {
 	position: absolute;
 	margin: auto;
@@ -1610,7 +1611,7 @@ ul.nav > li.current_page_item.current > a:before {
 	left: 12.5%;
 	display: block;
 }
-
+*/
 
 /*----  SECTION:  HOME > INTRO AND SHORT MSGS   ----*/
 .intro {
